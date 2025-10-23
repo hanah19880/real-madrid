@@ -4,82 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ريال مدريد - الرئيسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* إضافة أنماط القائمة المنسدلة */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0;
-            text-align: right;
-        }
-        
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-        /* تحسين التصميم للشاشات الصغيرة */
-        @media screen and (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-            }
-            
-            .dropdown {
-                width: 100%;
-            }
-            
-            .dropdown-content {
-                position: static;
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>ريال مدريد 👑</h1>
-        <nav>
-            <ul>
+        <div class="header-container">
+            <h1>ريال مدريد 👑</h1>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">الرئيسية</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">المحتوى ▽</a>
-                    <div class="dropdown-content">
-                        <a href="players.html">اللاعبين</a>
-                        <a href="matches.html">المباريات</a>
-                        <a href="trophies.html">البطولات</a>
-                        <a href="legends.html">الأساطير</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">التفاعل ▽</a>
-                    <div class="dropdown-content">
-                        <a href="register.html">تسجيل عضو جديد</a>
-                        <a href="vote.html">التصويت للاعبين</a>
-                        <a href="results.html">نتائج التصويت</a>
-                    </div>
-                </li>
+                <li><a href="players.html">اللاعبين</a></li>
+                <li><a href="matches.html">المباريات</a></li>
+                <li><a href="trophies.html">البطولات</a></li>
+                <li><a href="legends.html">الأساطير</a></li>
+                <li><a href="register.html">تسجيل عضو جديد</a></li>
+                <li><a href="vote.html">التصويت للاعبين</a></li>
+                <li><a href="results.html">نتائج التصويت</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
     <main>
@@ -119,6 +65,7 @@
         <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
     </footer>
 
+    <script src="navbar.js"></script>
     <script>
         // تحديث الإحصائيات
         function updateStats() {
