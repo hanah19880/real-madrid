@@ -1,18 +1,21 @@
-[file name]: trophies.html
-[file content begin]
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ريال مدريد - البطولات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>البطولات</h1>
-        <nav>
-            <ul>
+        <div class="header-container">
+            <h1>ريال مدريد 👑</h1>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="players.html">اللاعبين</a></li>
                 <li><a href="matches.html">المباريات</a></li>
@@ -22,7 +25,7 @@
                 <li><a href="vote.html">التصويت للاعبين</a></li>
                 <li><a href="results.html">نتائج التصويت</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
     <main>
@@ -64,6 +67,7 @@
     <footer>
         <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
     </footer>
+
+    <script src="navbar.js"></script>
 </body>
 </html>
-[file content end]
