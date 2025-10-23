@@ -3,59 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ريال مدريد - المباريات</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>المباريات - ريال مدريد</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #1a2a6c;
+            color: white;
+        }
+
+        header {
+            background: #000;
+            padding: 1rem 0;
+            border-bottom: 3px solid #fdbb2d;
+        }
+
+        header h1 {
+            text-align: center;
+            color: #fdbb2d;
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #fdbb2d;
+            color: black;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .matches-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .match-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #fdbb2d;
+        }
+
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .match-competition {
+            background: #fdbb2d;
+            color: black;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .match-date {
+            color: #ccc;
+        }
+
+        .match-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .team-name {
+            font-weight: bold;
+        }
+
+        .vs {
+            color: #fdbb2d;
+            font-weight: bold;
+        }
+
+        .match-score {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: #b21f1f;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .match-info {
+            display: flex;
+            justify-content: space-between;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .upcoming {
+            border-color: #00ff00;
+        }
+
+        .live {
+            border-color: #ff0000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { border-color: #ff0000; }
+            50% { border-color: #fdbb2d; }
+            100% { border-color: #ff0000; }
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>المباريات</h1>
+        <h1>مباريات الفريق ⚽</h1>
         <nav>
             <ul>
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="players.html">اللاعبين</a></li>
-                <li><a href="matches.html">المباريات</a></li>
                 <li><a href="trophies.html">البطولات</a></li>
                 <li><a href="legends.html">الأساطير</a></li>
-                <li><a href="register.html">تسجيل عضو جديد</a></li>
-                <li><a href="vote.html">التصويت للاعبين</a></li>
-                <li><a href="results.html">نتائج التصويت</a></li>
+                <li><a href="vote.html">التصويت</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>مباريات ديسمبر 2025</h2>
-        <table>
-            <tr>
-                <th>المباراة</th>
-                <th>التاريخ</th>
-                <th>الملعب</th>
-            </tr>
-            <tr>
-                <td>ريال مدريد × برشلونة</td>
-                <td>3/12/2025</td>
-                <td>سانتياغو برنابيو</td>
-            </tr>
-            <tr>
-                <td>ريال مدريد × أتلتيكو مدريد</td>
-                <td>10/12/2025</td>
-                <td>واندا متروبوليتانو</td>
-            </tr>
-            <tr>
-                <td>ريال مدريد × فالنسيا</td>
-                <td>17/12/2025</td>
-                <td>ميستايا</td>
-            </tr>
-            <tr>
-                <td>ريال مدريد × إشبيلية</td>
-                <td>24/12/2025</td>
-                <td>سانتياغو برنابيو</td>
-            </tr>
-        </table>
+        <div class="matches-container">
+            <!-- مباراة مباشرة -->
+            <div class="match-card live">
+                <div class="match-header">
+                    <span class="match-competition">الدوري الإسباني</span>
+                    <span class="match-date">مباشر الآن</span>
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">ريال مدريد</span>
+                    </div>
+                    <div class="match-score">2 - 1</div>
+                    <div class="team">
+                        <span class="team-name">برشلونة</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span>الملعب: سانتياغو برنابيو</span>
+                    <span>الدقيقة: 67'</span>
+                </div>
+            </div>
+
+            <!-- مباريات قادمة -->
+            <div class="match-card upcoming">
+                <div class="match-header">
+                    <span class="match-competition">دوري الأبطال</span>
+                    <span class="match-date">2025-01-15</span>
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">ريال مدريد</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <span class="team-name">بايرن ميونخ</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span>الملعب: أليانز أرينا</span>
+                    <span>21:00 بتوقيت مكة</span>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-competition">الدوري الإسباني</span>
+                    <span class="match-date">2025-01-20</span>
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">أتلتيكو مدريد</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <span class="team-name">ريال مدريد</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span>الملعب: واندا ميتروبوليتانو</span>
+                    <span>19:30 بتوقيت مكة</span>
+                </div>
+            </div>
+
+            <!-- مباريات سابقة -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-competition">كأس الملك</span>
+                    <span class="match-date">2024-12-10</span>
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">ريال مدريد</span>
+                    </div>
+                    <div class="match-score">3 - 0</div>
+                    <div class="team">
+                        <span class="team-name">إشبيلية</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span>الملعب: سانتياغو برنابيو</span>
+                    <span>منتهية</span>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-competition">الدوري الإسباني</span>
+                    <span class="match-date">2024-12-05</span>
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">فالنسيا</span>
+                    </div>
+                    <div class="match-score">1 - 2</div>
+                    <div class="team">
+                        <span class="team-name">ريال مدريد</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span>الملعب: ميستايا</span>
+                    <span>منتهية</span>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
+        <p>© 2025 موقع ريال مدريد - Hala Madrid!</p>
     </footer>
 </body>
 </html>
