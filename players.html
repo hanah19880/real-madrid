@@ -1,167 +1,112 @@
+[file name]: players.html
+[file content begin]
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اللاعبين - ريال مدريد</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #1a2a6c;
-            color: white;
-        }
-
-        header {
-            background: #000;
-            padding: 1rem 0;
-            border-bottom: 3px solid #fdbb2d;
-        }
-
-        header h1 {
-            text-align: center;
-            color: #fdbb2d;
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #fdbb2d;
-            color: black;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .players-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .player-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px solid #fdbb2d;
-        }
-
-        .player-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            background: #b21f1f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .player-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #fdbb2d;
-            margin-bottom: 0.5rem;
-        }
-
-        .player-position {
-            color: #ccc;
-            margin-bottom: 0.5rem;
-        }
-
-        .player-nationality {
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ريال مدريد - اللاعبون</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>لائحة اللاعبين ⚽</h1>
+        <h1>اللاعبون</h1>
         <nav>
             <ul>
                 <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="vote.html">التصويت</a></li>
-                <li><a href="results.html">النتائج</a></li>
+                <li><a href="players.html">اللاعبين</a></li>
+                <li><a href="matches.html">المباريات</a></li>
+                <li><a href="trophies.html">البطولات</a></li>
+                <li><a href="legends.html">الأساطير</a></li>
+                <li><a href="register.html">تسجيل عضو جديد</a></li>
+                <li><a href="vote.html">التصويت للاعبين</a></li>
+                <li><a href="results.html">نتائج التصويت</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <div class="players-grid">
-            <div class="player-card">
-                <div class="player-image">⚽</div>
-                <div class="player-name">جود بيلينغهام</div>
-                <div class="player-position">وسط</div>
-                <div class="player-nationality">إنجلترا</div>
-            </div>
-            <div class="player-card">
-                <div class="player-image">⚽</div>
-                <div class="player-name">فينيسيوس جونيور</div>
-                <div class="player-position">مهاجم</div>
-                <div class="player-nationality">البرازيل</div>
-            </div>
-            <div class="player-card">
-                <div class="player-image">⚽</div>
-                <div class="player-name">لوكا مودريتش</div>
-                <div class="player-position">وسط</div>
-                <div class="player-nationality">كرواتيا</div>
-            </div>
-            <div class="player-card">
-                <div class="player-image">⚽</div>
-                <div class="player-name">رودريغو</div>
-                <div class="player-position">مهاجم</div>
-                <div class="player-nationality">البرازيل</div>
-            </div>
-            <div class="player-card">
-                <div class="player-image">⚽</div>
-                <div class="player-name">فيدريكو فالفيردي</div>
-                <div class="player-position">وسط</div>
-                <div class="player-nationality">الأوروغواي</div>
-            </div>
-            <div class="player-card">
-                <div class="player-image">⚽</div>
-                <div class="player-name">أنطونيو روديغر</div>
-                <div class="player-position">دفاع</div>
-                <div class="player-nationality">ألمانيا</div>
-            </div>
+    <main class="grid">
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Vini_Jr_2022.jpg" alt="فينيسيوس جونيور">
+            <h3>فينيسيوس جونيور</h3>
+            <p>مهاجم</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Jude_Bellingham_2022.jpg" alt="جود بيلينجهام">
+            <h3>جود بيلينجهام</h3>
+            <p>وسط</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Federico_Valverde_2022.jpg" alt="فيدريكو فالفيردي">
+            <h3>فيدريكو فالفيردي</h3>
+            <p>وسط</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Antonio_R%C3%BCdiger_2022.jpg" alt="روديغر">
+            <h3>أنطونيو روديغر</h3>
+            <p>مدافع</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Thibaut_Courtois_2018.jpg" alt="كورتوا">
+            <h3>تيبو كورتوا</h3>
+            <p>حارس مرمى</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/David_Alaba_2021.jpg" alt="دافيد ألابا">
+            <h3>دافيد ألابا</h3>
+            <p>مدافع</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/%C3%89der_Militao_2018.jpg" alt="إيدير ميليتاو">
+            <h3>إيدير ميليتاو</h3>
+            <p>مدافع</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Dani_Carvajal_2022.jpg" alt="داني كارفاخال">
+            <h3>داني كارفاخال</h3>
+            <p>مدافع</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Ferland_Mendy_2022.jpg" alt="فيرلاند ميندي">
+            <h3>فيرلاند ميندي</h3>
+            <p>مدافع</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Toni_Kroos_2019.jpg" alt="توني كروس">
+            <h3>توني كروس</h3>
+            <p>وسط</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Luka_Modric_2018.jpg" alt="لوكا مودريتش">
+            <h3>لوكا مودريتش</h3>
+            <p>وسط</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Rodrygo_2023.jpg" alt="رودريغو">
+            <h3>رودريغو</h3>
+            <p>مهاجم</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Aur%C3%A9lien_Tchouam%C3%A9ni_2022.jpg" alt="أوريلين تشواميني">
+            <h3>أوريلين تشواميني</h3>
+            <p>وسط</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Eduardo_Camavinga_2021.jpg" alt="إدواردو كامافينغا">
+            <h3>إدواردو كامافينغا</h3>
+            <p>وسط</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Andriy_Lunin_2021.jpg" alt="أندري لونين">
+            <h3>أندري لونين</h3>
+            <p>حارس مرمى</p>
         </div>
     </main>
 
     <footer>
-        <p>© 2025 موقع ريال مدريد</p>
+        <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
     </footer>
 </body>
 </html>
+[file content end]
