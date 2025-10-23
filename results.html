@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج التصويت - ريال مدريد</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>نتائج التصويت 📊</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="players.html">اللاعبين</a></li>
+                <li><a href="matches.html">المباريات</a></li>
+                <li><a href="trophies.html">البطولات</a></li>
+                <li><a href="legends.html">الأساطير</a></li>
+                <li><a href="register.html">تسجيل عضو جديد</a></li>
+                <li><a href="vote.html">التصويت للاعبين</a></li>
+                <li><a href="results.html">نتائج التصويت</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="text-align: center; color: #00529f; margin-bottom: 2rem;">إحصائيات التصويت</h2>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalVotesCount">0</div>
+                <div class="stat-label">إجمالي التصويتات</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="uniqueVoters">0</div>
+                <div class="stat-label">مشجع مشارك</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="avgRating">0</div>
+                <div class="stat-label">متوسط التقييم</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="topPlayer">-</div>
+                <div class="stat-label">الأكثر تصويتاً</div>
+            </div>
+        </div>
+
+        <div class="card" style="margin: 2rem 0;">
+            <h3 style="color: #00529f; margin-bottom: 1rem;">توزيع التصويتات حسب اللاعبين</h3>
+            <div id="playersChart"></div>
+        </div>
+
+        <div class="card">
+            <h3 style="color: #00529f; margin-bottom: 1rem;">آخر التصويتات</h3>
+            <div id="recentVotes"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
+    </footer>
+
+    <script>
+        function displayResults() {
+            const votes = JSON.parse(localStorage.getItem('madridVotes')) || [];
+            const users = JSON.parse(localStorage.getItem('madridUsers')) || [];
+            
+            document.getElementById('totalVotesCount').textContent = votes.length;
+            document.getElementById('uniqueVoters').textContent = users.length;
+            
+            if (votes.length > 0) {
+                const totalRating = votes.reduce((sum, vote) => sum + parseInt(vote.rating), 0);
+                const avgRating = (totalRating / votes.length).toFixed(1);
+                document.getElementById('avgRating').textContent = avgRating;
+            }
+            
+            if (votes.length > 0) {
+                const playerVotes = {};
+                votes.forEach(vote => {
+                    playerVotes[vote.player] = (playerVotes[vote.player] || 0) + 1;
+                });
+                
+                const topPlayer = Object.keys(playerVotes).reduce((a, b) => 
+                    playerVotes[a] > playerVotes[b] ? a : b
+                );
+                
+                document.getElementById('topPlayer').textContent = getPlayerName(topPlayer);
+            }
+            
+            displayPlayersChart(votes);
+            displayRecentVotes(votes);
+        }
+        
+        function getPlayerName(playerKey) {
+            const players = {
+                'bellingham': 'جود بيلينغهام',
+                'vini': 'فينيسيوس جونيور',
+                'rodrygo': 'رودريغو',
+                'valverde': 'فيدريكو فالفيردي',
+                'modric': 'لوكا مودريتش',
+                'kroos': 'توني كروس',
+                'rudiger': 'أنطونيو روديغر',
+                'courtois': 'تيبو كورتوا'
+            };
+            return players[playerKey] || playerKey;
+        }
+        
+        function displayPlayersChart(votes) {
+            if (votes.length === 0) {
+                document.getElementById('playersChart').innerHTML = '<p style="text-align: center; color: #666;">لا توجد تصويتات حتى الآن</p>';
+                return;
+            }
+            
+            const playerVotes = {};
+            votes.forEach(vote => {
+                playerVotes[vote.player] = (playerVotes[vote.player] || 0) + 1;
+            });
+            
+            let chartHTML = '';
+            Object.entries(playerVotes).forEach(([player, count]) => {
+                const percentage = ((count / votes.length) * 100).toFixed(1);
+                chartHTML += `
+                    <div style="margin: 0.5rem 0;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                            <span>${getPlayerName(player)}</span>
+                            <span>${count} صوت (${percentage}%)</span>
+                        </div>
+                        <div style="background: #e0e0e0; border-radius: 5px; height: 10px;">
+                            <div style="background: #00529f; height: 100%; border-radius: 5px; width: ${percentage}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('playersChart').innerHTML = chartHTML;
+        }
+        
+        function displayRecentVotes(votes) {
+            if (votes.length === 0) {
+                document.getElementById('recentVotes').innerHTML = '<p style="text-align: center; color: #666;">لا توجد تصويتات حتى الآن</p>';
+                return;
+            }
+            
+            const recentVotes = votes.slice(-5).reverse();
+            let votesHTML = '';
+            
+            recentVotes.forEach(vote => {
+                votesHTML += `
+                    <div style="background: #f8f9fa; padding: 1rem; margin: 0.5rem 0; border-radius: 8px; border-right: 4px solid #00529f;">
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                            <strong>${getPlayerName(vote.player)}</strong>
+                            <span>⭐ ${vote.rating}/5</span>
+                        </div>
+                        <div style="color: #666; font-size: 0.9rem; margin-top: 0.25rem;">
+                            ${vote.match} • ${vote.voteDate}
+                        </div>
+                        ${vote.comment ? `<div style="margin-top: 0.5rem; color: #555;">"${vote.comment}"</div>` : ''}
+                    </div>
+                `;
+            });
+            
+            document.getElementById('recentVotes').innerHTML = votesHTML;
+        }
+        
+        displayResults();
+    </script>
+</body>
+</html>
