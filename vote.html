@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التصويت لأفضل لاعب - ريال مدريد</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>صوت لأفضل لاعب 🏆</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="players.html">اللاعبين</a></li>
+                <li><a href="matches.html">المباريات</a></li>
+                <li><a href="trophies.html">البطولات</a></li>
+                <li><a href="legends.html">الأساطير</a></li>
+                <li><a href="register.html">تسجيل عضو جديد</a></li>
+                <li><a href="vote.html">التصويت للاعبين</a></li>
+                <li><a href="results.html">نتائج التصويت</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="voteForm">
+            <h2 style="text-align: center; color: #00529f; margin-bottom: 2rem;">صوت لأفضل لاعب في المباراة</h2>
+            
+            <div class="form-group">
+                <label for="selectedMatch">اختر المباراة:</label>
+                <select id="selectedMatch" required>
+                    <option value="">-- اختر المباراة --</option>
+                    <option value="barca">الكلاسيكو vs برشلونة</option>
+                    <option value="atletico">الدربي vs أتلتيكو مدريد</option>
+                    <option value="valencia">ريال مدريد vs فالنسيا</option>
+                    <option value="sevilla">ريال مدريد vs إشبيلية</option>
+                    <option value="ucl">مباراة دوري الأبطال</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bestPlayer">أفضل لاعب في المباراة:</label>
+                <select id="bestPlayer" required>
+                    <option value="">-- اختر أفضل لاعب --</option>
+                    <option value="bellingham">جود بيلينغهام</option>
+                    <option value="vini">فينيسيوس جونيور</option>
+                    <option value="rodrygo">رودريغو</option>
+                    <option value="valverde">فيدريكو فالفيردي</option>
+                    <option value="modric">لوكا مودريتش</option>
+                    <option value="kroos">توني كروس</option>
+                    <option value="rudiger">أنطونيو روديغر</option>
+                    <option value="courtois">تيبو كورتوا</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>تقييم أداء اللاعب:</label>
+                <div class="rating">
+                    <input type="radio" name="rating" value="5" id="star5">
+                    <label for="star5">⭐</label>
+                    <input type="radio" name="rating" value="4" id="star4">
+                    <label for="star4">⭐</label>
+                    <input type="radio" name="rating" value="3" id="star3">
+                    <label for="star3">⭐</label>
+                    <input type="radio" name="rating" value="2" id="star2">
+                    <label for="star2">⭐</label>
+                    <input type="radio" name="rating" value="1" id="star1">
+                    <label for="star1">⭐</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="playerComment">تعليق على أداء اللاعب (اختياري):</label>
+                <textarea id="playerComment" placeholder="اكتب تعليقك عن أداء اللاعب..." rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;">تأكيد التصويت ✅</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
+    </footer>
+
+    <script>
+        document.getElementById('voteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const rating = document.querySelector('input[name="rating"]:checked');
+            if (!rating) {
+                alert('⚠️ الرجاء اختيار تقييم للاعب');
+                return;
+            }
+            
+            const voteData = {
+                id: Date.now(),
+                match: document.getElementById('selectedMatch').value,
+                player: document.getElementById('bestPlayer').value,
+                rating: rating.value,
+                comment: document.getElementById('playerComment').value,
+                voteDate: new Date().toLocaleDateString('ar-EG'),
+                timestamp: new Date().toISOString()
+            };
+            
+            const votes = JSON.parse(localStorage.getItem('madridVotes')) || [];
+            votes.push(voteData);
+            
+            localStorage.setItem('madridVotes', JSON.stringify(votes));
+            
+            alert('🎉 شكراً لتصويتك! تم حفظ تصويتك بنجاح. Hala Madrid!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
