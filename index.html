@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ريال مدريد - الرئيسية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ريال مدريد 👑</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="players.html">اللاعبين</a></li>
+                <li><a href="matches.html">المباريات</a></li>
+                <li><a href="trophies.html">البطولات</a></li>
+                <li><a href="legends.html">الأساطير</a></li>
+                <li><a href="register.html">تسجيل عضو جديد</a></li>
+                <li><a href="vote.html">التصويت للاعبين</a></li>
+                <li><a href="results.html">نتائج التصويت</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h2>مرحباً بك في عالم النادي الملكي! 👑</h2>
+            <p>انضم إلى مجتمع مشجعي ريال مدريد وصوت لأفضل لاعب</p>
+            <div class="cta-buttons">
+                <a href="register.html" class="btn">انضم إلينا ⚽</a>
+                <a href="vote.html" class="btn">صوت الآن 🏆</a>
+            </div>
+        </section>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalUsers">0</div>
+                <div class="stat-label">مشجع مسجل</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalVotes">0</div>
+                <div class="stat-label">تصويت مقدم</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15</div>
+                <div class="stat-label">دوري أبطال</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">36</div>
+                <div class="stat-label">دوري إسباني</div>
+            </div>
+        </div>
+
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" 
+             alt="شعار ريال مدريد" width="200" style="display: block; margin: 2rem auto; max-width: 100%;">
+    </main>
+
+    <footer>
+        <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
+    </footer>
+
+    <script>
+        function updateStats() {
+            const users = JSON.parse(localStorage.getItem('madridUsers')) || [];
+            const votes = JSON.parse(localStorage.getItem('madridVotes')) || [];
+            
+            document.getElementById('totalUsers').textContent = users.length;
+            document.getElementById('totalVotes').textContent = votes.length;
+        }
+        
+        updateStats();
+    </script>
+</body>
+</html>
