@@ -13,10 +13,12 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            background-attachment: fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+            background-size: cover;
             color: white;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         .navbar {
@@ -26,6 +28,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #fdbb2d;
         }
 
         .nav-container {
@@ -70,7 +73,7 @@
         }
 
         .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(253, 187, 45, 0.2);
             color: #fdbb2d;
         }
 
@@ -96,19 +99,8 @@
 
         .hero {
             text-align: center;
-            padding: 100px 20px;
-            background: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 120px 20px;
             position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
         }
 
         .hero-content {
@@ -116,18 +108,28 @@
             z-index: 1;
             max-width: 800px;
             margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px 30px;
+            border-radius: 15px;
+            border: 2px solid #fdbb2d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #fdbb2d;
         }
 
         .hero h2 {
             font-size: 36px;
             margin-bottom: 30px;
-            color: #fdbb2d;
+            color: white;
+            background: linear-gradient(45deg, #1a2a6c, #b21f1f);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
         }
 
         .hero p {
@@ -136,6 +138,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.8;
         }
 
         .cta-buttons {
@@ -146,13 +149,14 @@
         }
 
         .btn {
-            padding: 12px 30px;
+            padding: 15px 35px;
             border: none;
             border-radius: 30px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
+            min-width: 160px;
         }
 
         .btn-primary {
@@ -163,7 +167,7 @@
         .btn-primary:hover {
             background-color: #ffa500;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(253, 187, 45, 0.4);
         }
 
         .btn-secondary {
@@ -176,10 +180,18 @@
             background-color: white;
             color: #000;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
         }
 
         @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px;
+            }
+            
+            .hero-content {
+                padding: 30px 20px;
+            }
+            
             .hero h1 {
                 font-size: 36px;
             }
@@ -187,11 +199,65 @@
             .hero h2 {
                 font-size: 28px;
             }
+            
+            .hero p {
+                font-size: 18px;
+            }
 
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        /* قسم إضافي للبطولات */
+        .trophies {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 60px 20px;
+            margin: 50px 0;
+            border-top: 3px solid #fdbb2d;
+            border-bottom: 3px solid #fdbb2d;
+        }
+
+        .trophies-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .trophies h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #fdbb2d;
+        }
+
+        .trophy-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .trophy-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 20px;
+            border-radius: 10px;
+            border: 1px solid #fdbb2d;
+        }
+
+        .trophy-item h3 {
+            font-size: 48px;
+            color: #fdbb2d;
+            margin-bottom: 10px;
+        }
+
+        .trophy-item p {
+            font-size: 18px;
+            color: white;
         }
     </style>
 </head>
@@ -225,6 +291,31 @@
             <div class="cta-buttons">
                 <button class="btn btn-primary">انضم إلينا 😊</button>
                 <button class="btn btn-secondary">صوت الآن 💬</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم البطولات -->
+    <section class="trophies">
+        <div class="trophies-container">
+            <h2>إنجازات النادي</h2>
+            <div class="trophy-stats">
+                <div class="trophy-item">
+                    <h3>14</h3>
+                    <p>دوري أبطال أوروبا</p>
+                </div>
+                <div class="trophy-item">
+                    <h3>35</h3>
+                    <p>الدوري الإسباني</p>
+                </div>
+                <div class="trophy-item">
+                    <h3>19</h3>
+                    <p>كأس الملك</p>
+                </div>
+                <div class="trophy-item">
+                    <h3>5</h3>
+                    <p>كأس العالم للأندية</p>
+                </div>
             </div>
         </div>
     </section>
