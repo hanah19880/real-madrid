@@ -1,348 +1,79 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أساطير النادي - ريال مدريد</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #1a2a6c;
-            color: white;
-        }
-
-        header {
-            background: #000;
-            padding: 1rem 0;
-            border-bottom: 3px solid #fdbb2d;
-        }
-
-        header h1 {
-            text-align: center;
-            color: #fdbb2d;
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #fdbb2d;
-            color: black;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .legends-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .legend-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            border: 3px solid #fdbb2d;
-            transition: transform 0.3s ease;
-        }
-
-        .legend-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .legend-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            background: linear-gradient(45deg, #b21f1f, #fdbb2d);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            border: 4px solid white;
-        }
-
-        .legend-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fdbb2d;
-            margin-bottom: 0.5rem;
-        }
-
-        .legend-position {
-            color: #ccc;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .legend-era {
-            background: #b21f1f;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        .legend-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .stat {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem;
-            border-radius: 5px;
-        }
-
-        .stat-number {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #fdbb2d;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: #ccc;
-        }
-
-        .cristiano {
-            background: linear-gradient(45deg, #1a2a6c, #b21f1f);
-        }
-
-        .zidane {
-            background: linear-gradient(45deg, #000080, #ffffff);
-        }
-
-        .raul {
-            background: linear-gradient(45deg, #b21f1f, #ffffff);
-        }
-
-        .casillas {
-            background: linear-gradient(45deg, #1a2a6c, #ff0000);
-        }
-
-        .di-stefano {
-            background: linear-gradient(45deg, #000000, #ffffff);
-        }
-
-        .ronaldo {
-            background: linear-gradient(45deg, #ff0000, #ffff00);
-        }
-
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ريال مدريد - الأساطير</title>
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>أساطير النادي 🌟</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">الرئيسية</a></li>
+  <header>
+    <h1>أساطير ريال مدريد</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="players.html">اللاعبين</a></li>
                 <li><a href="matches.html">المباريات</a></li>
                 <li><a href="trophies.html">البطولات</a></li>
-                <li><a href="vote.html">التصويت</a></li>
-            </ul>
-        </nav>
-    </header>
+                <li><a href="legends.html">الأساطير</a></li>
+                <li><a href="register.html">تسجيل عضو جديد</a></li>
+                <li><a href="vote.html">التصويت للاعبين</a></li>
+                <li><a href="results.html">نتائج التصويت</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <div class="legends-grid">
-            <!-- كريستيانو رونالدو -->
-            <div class="legend-card cristiano">
-                <div class="legend-image">👑</div>
-                <div class="legend-name">كريستيانو رونالدو</div>
-                <div class="legend-position">مهاجم</div>
-                <div class="legend-era">2009-2018</div>
-                <div class="legend-stats">
-                    <div class="stat">
-                        <div class="stat-number">450</div>
-                        <div class="stat-label">هدف</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">كرة ذهبية</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">16</div>
-                        <div class="stat-label">بطولة</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">438</div>
-                        <div class="stat-label">مباراة</div>
-                    </div>
-                </div>
-            </div>
+  <main class="grid">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Cristiano_Ronaldo_2018.jpg" alt="كريستيانو رونالدو">
+      <h3>كريستيانو رونالدو</h3>
+      <p>الهداف التاريخي للنادي و هداف دوري الأبطال و أكثر من سجل أهداف في هذه اللعبة</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Zinedine_Zidane_2008.jpg" alt="زين الدين زيدان">
+      <h3>زين الدين زيدان</h3>
+      <p>أسطورة الوسط والمدرب صاحب هاتريك دوري الأبطال </p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Iker_Casillas_2011.jpg" alt="إيكر كاسياس">
+      <h3>إيكر كاسياس</h3>
+      <p>أحد أعظم الحراس في التاريخ</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Sergio_Ramos_2018.jpg" alt="سيرخيو راموس">
+      <h3>سيرخيو راموس</h3>
+      <p>قائد ومدافع أسطوري</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Fabio_Cannavaro_2009.jpg" alt="فابيو كانافارو">
+      <h3>فابيو كانافارو</h3>
+      <p>مدافع قوي و أقصر لاعب حاز على الكرة الذهبية</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Luka_Modric_2018.jpg" alt="لوكا مودريتش">
+      <h3>لوكا مودريتش</h3>
+      <p>قلب الوسط وصانع الألعاب صاحب الكرة الذهبية و أول من كسر هيمنة كريستيانو و ميسي على الجائزة</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mesut_%C3%96zil_2011.jpg" alt="مسعود أوزيل">
+      <h3>مسعود أوزيل</h3>
+      <p>صانع الألعاب الذكي</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Toni_Kroos_2019.jpg" alt="توني كروس">
+      <h3>توني كروس</h3>
+      <p>مهندس خط الوسط مميز بالتمرير والدقة</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Marcelo_Vieira_2018.jpg" alt="مارسيلو">
+      <h3>مارسيلو</h3>
+      <p>ظهير هجومي أسطوري</p>
+    </div>
+  </main>
 
-            <!-- زين الدين زيدان -->
-            <div class="legend-card zidane">
-                <div class="legend-image">🎨</div>
-                <div class="legend-name">زين الدين زيدان</div>
-                <div class="legend-position">وسط</div>
-                <div class="legend-era">2001-2006</div>
-                <div class="legend-stats">
-                    <div class="stat">
-                        <div class="stat-number">49</div>
-                        <div class="stat-label">هدف</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">كرة ذهبية</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">6</div>
-                        <div class="stat-label">بطولة</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">227</div>
-                        <div class="stat-label">مباراة</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- راؤول -->
-            <div class="legend-card raul">
-                <div class="legend-image">7️⃣</div>
-                <div class="legend-name">راؤول غونزاليس</div>
-                <div class="legend-position">مهاجم</div>
-                <div class="legend-era">1994-2010</div>
-                <div class="legend-stats">
-                    <div class="stat">
-                        <div class="stat-number">323</div>
-                        <div class="stat-label">هدف</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">16</div>
-                        <div class="stat-label">موسم</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">16</div>
-                        <div class="stat-label">بطولة</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">741</div>
-                        <div class="stat-label">مباراة</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- إيكر كاسياس -->
-            <div class="legend-card casillas">
-                <div class="legend-image">🧤</div>
-                <div class="legend-name">إيكر كاسياس</div>
-                <div class="legend-position">حارس مرمى</div>
-                <div class="legend-era">1999-2015</div>
-                <div class="legend-stats">
-                    <div class="stat">
-                        <div class="stat-number">725</div>
-                        <div class="stat-label">مباراة</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">19</div>
-                        <div class="stat-label">بطولة</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">16</div>
-                        <div class="stat-label">موسم</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">264</div>
-                        <div class="stat-label">شوط نظيف</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ألفريدو دي ستيفانو -->
-            <div class="legend-card di-stefano">
-                <div class="legend-image">🌟</div>
-                <div class="legend-name">ألفريدو دي ستيفانو</div>
-                <div class="legend-position">مهاجم</div>
-                <div class="legend-era">1953-1964</div>
-                <div class="legend-stats">
-                    <div class="stat">
-                        <div class="stat-number">308</div>
-                        <div class="stat-label">هدف</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">2</div>
-                        <div class="stat-label">كرة ذهبية</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">16</div>
-                        <div class="stat-label">بطولة</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">396</div>
-                        <div class="stat-label">مباراة</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- رونالدو النازاريو -->
-            <div class="legend-card ronaldo">
-                <div class="legend-image">🐅</div>
-                <div class="legend-name">رونالدو النازاريو</div>
-                <div class="legend-position">مهاجم</div>
-                <div class="legend-era">2002-2007</div>
-                <div class="legend-stats">
-                    <div class="stat">
-                        <div class="stat-number">104</div>
-                        <div class="stat-label">هدف</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">كرة ذهبية</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">بطولة</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">177</div>
-                        <div class="stat-label">مباراة</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>© 2025 موقع ريال مدريد - أساطير خالدة في تاريخ الكرة</p>
-    </footer>
+  <footer>
+    <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
+  </footer>
 </body>
 </html>
