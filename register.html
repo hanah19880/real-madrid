@@ -1,171 +1,115 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل عضو جديد - ريال مدريد</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #1a2a6c;
-            color: white;
-        }
-
-        header {
-            background: #000;
-            padding: 1rem 0;
-            border-bottom: 3px solid #fdbb2d;
-        }
-
-        header h1 {
-            text-align: center;
-            color: #fdbb2d;
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #fdbb2d;
-            color: black;
-        }
-
-        main {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .form-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #fdbb2d;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #fdbb2d;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        button {
-            background: #fdbb2d;
-            color: black;
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 1rem;
-        }
-
-        button:hover {
-            background: #ffa500;
-        }
-
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>تسجيل عضو جديد 👤</h1>
+        <h1>انضم لعائلة الريال 💫</h1>
         <nav>
             <ul>
                 <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="vote.html">التصويت</a></li>
-                <li><a href="results.html">النتائج</a></li>
+                <li><a href="players.html">اللاعبين</a></li>
+                <li><a href="matches.html">المباريات</a></li>
+                <li><a href="trophies.html">البطولات</a></li>
+                <li><a href="legends.html">الأساطير</a></li>
+                <li><a href="register.html">تسجيل عضو جديد</a></li>
+                <li><a href="vote.html">التصويت للاعبين</a></li>
+                <li><a href="results.html">نتائج التصويت</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="form-container">
-            <form id="registerForm">
-                <div class="form-group">
-                    <label for="name">الاسم الكامل:</label>
-                    <input type="text" id="name" required>
-                </div>
+        <form id="registerForm">
+            <h2 style="text-align: center; color: #00529f; margin-bottom: 2rem;">تسجيل مشجع جديد</h2>
+            
+            <div class="form-group">
+                <label for="username">اسم المستخدم:</label>
+                <input type="text" id="username" placeholder="ادخل اسم المستخدم" required>
+            </div>
 
-                <div class="form-group">
-                    <label for="email">البريد الإلكتروني:</label>
-                    <input type="email" id="email" required>
-                </div>
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" placeholder="example@email.com" required>
+            </div>
 
-                <div class="form-group">
-                    <label for="country">البلد:</label>
-                    <select id="country" required>
-                        <option value="">اختر البلد</option>
-                        <option value="ksa">السعودية</option>
-                        <option value="uae">الإمارات</option>
-                        <option value="egypt">مصر</option>
-                        <option value="algeria">الجزائر</option>
-                        <option value="morocco">المغرب</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label for="password">كلمة المرور:</label>
+                <input type="password" id="password" placeholder="ادخل كلمة المرور" required>
+            </div>
 
-                <div class="form-group">
-                    <label for="favPlayer">اللاعب المفضل:</label>
-                    <select id="favPlayer" required>
-                        <option value="">اختر اللاعب</option>
-                        <option value="bellingham">جود بيلينغهام</option>
-                        <option value="vini">فينيسيوس جونيور</option>
-                        <option value="modric">لوكا مودريتش</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label for="birthDate">تاريخ الميلاد:</label>
+                <input type="date" id="birthDate" required>
+            </div>
 
-                <button type="submit">تسجيل العضوية</button>
-            </form>
-        </div>
+            <div class="form-group">
+                <label for="country">البلد:</label>
+                <select id="country" required>
+                    <option value="">اختر بلدك</option>
+                    <option value="sa">السعودية</option>
+                    <option value="eg">مصر</option>
+                    <option value="ae">الإمارات</option>
+                    <option value="dz">الجزائر</option>
+                    <option value="ma">المغرب</option>
+                    <option value="iq">العراق</option>
+                    <option value="jo">الأردن</option>
+                    <option value="lb">لبنان</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;">انضم لنا ⚽</button>
+        </form>
     </main>
 
     <footer>
-        <p>© 2025 موقع ريال مدريد</p>
+        <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
     </footer>
 
     <script>
         document.getElementById('registerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('🎉 تم تسجيل العضوية بنجاح! مرحباً بك في عائلة ريال مدريد');
+            
+            const userData = {
+                id: Date.now(),
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                birthDate: document.getElementById('birthDate').value,
+                country: document.getElementById('country').value,
+                joinDate: new Date().toLocaleDateString('ar-EG'),
+                membership: "active"
+            };
+            
+            // جلب المستخدمين الحاليين
+            const users = JSON.parse(localStorage.getItem('madridUsers')) || [];
+            
+            // التأكد من عدم تكرار البريد أو اسم المستخدم
+            const userExists = users.find(user => 
+                user.email === userData.email || user.username === userData.username
+            );
+            
+            if (userExists) {
+                alert('⚠️ المستخدم مسجل مسبقاً! الرجاء استخدام بريد إلكتروني أو اسم مستخدم مختلف.');
+                return;
+            }
+            
+            // إضافة المستخدم الجديد
+            users.push(userData);
+            localStorage.setItem('madridUsers', JSON.stringify(users));
+            
+            alert('🎉 تم تسجيلك بنجاح! مرحباً بك في عائلة الريال! Hala Madrid!');
             this.reset();
+            
+            // تحديث الإحصائيات في الصفحة الرئيسية
+            if (window.opener) {
+                window.opener.updateStats();
+            }
         });
     </script>
 </body>
