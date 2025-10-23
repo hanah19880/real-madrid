@@ -1,80 +1,170 @@
-/* ملف التنسيقات العام - styles.css */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                url('https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #00529f 0%, #ffffff 100%);
     min-height: 100vh;
+    direction: rtl;
 }
 
-/* التنسيقات المشتركة للرأس */
 header {
-    background: rgba(0, 0, 0, 0.95);
-    padding: 1rem 0;
-    border-bottom: 3px solid #fdbb2d;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 header h1 {
+    color: #00529f;
     text-align: center;
-    color: #fdbb2d;
-    font-size: 2.2rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* التنقل */
 nav ul {
+    list-style: none;
     display: flex;
     justify-content: center;
-    list-style: none;
+    gap: 2rem;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding: 0 1rem;
 }
 
 nav a {
-    color: white;
     text-decoration: none;
-    padding: 0.7rem 1.2rem;
+    color: #00529f;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
     border-radius: 25px;
     transition: all 0.3s ease;
-    font-weight: 500;
-    border: 2px solid transparent;
 }
 
 nav a:hover {
-    background: #fdbb2d;
-    color: black;
-    border-color: #fdbb2d;
+    background: #00529f;
+    color: white;
     transform: translateY(-2px);
 }
 
-/* المحتوى الرئيسي */
 main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* الأزرار */
-.btn {
-    background: #fdbb2d;
-    color: black;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    color: #00529f;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #00529f;
+    color: white;
     font-weight: bold;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #00529f;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #00529f;
+}
+
+.btn {
+    background: #00529f;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -83,129 +173,249 @@ main {
 }
 
 .btn:hover {
-    background: #ffa500;
+    background: #003d7a;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(253, 187, 45, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+.rating {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
 }
 
-.btn-secondary:hover {
-    background: white;
-    color: black;
+.rating input {
+    display: none;
 }
 
-/* البطاقات */
-.card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 2px solid #fdbb2d;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+.rating label {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ddd;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffd700;
 }
 
-/* النماذج */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #fdbb2d;
-    font-weight: bold;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 2px solid #fdbb2d;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #ffa500;
-    background: rgba(255, 255, 255, 0.15);
-}
-
-/* التذييل */
 footer {
-    background: rgba(0, 0, 0, 0.95);
+    background: #00529f;
+    color: white;
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
-    border-top: 3px solid #fdbb2d;
 }
 
-/* الألوان */
-:root {
-    --madrid-white: #ffffff;
-    --madrid-gold: #fdbb2d;
-    --madrid-blue: #1a2a6c;
-    --madrid-red: #b21f1f;
-    --madrid-dark: #000000;
+.welcome-section {
+    text-align: center;
+    padding: 3rem 0;
 }
 
-/* التجاوب */
+.welcome-section h2 {
+    color: #00529f;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-section p {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 2rem;
+    color: #00529f;
+    font-weight: bold;
+}
+
+.stat-label {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.trophy-list {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.trophy-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trophy-item:last-child {
+    border-bottom: none;
+}
+
+.trophy-item h3 {
+    color: #00529f;
+    margin: 0;
+}
+
+.trophy-item p {
+    color: #666;
+    margin: 0;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .trophy-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+/* تحسينات للموبايل */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+    
     header h1 {
         font-size: 1.8rem;
+        margin-bottom: 0.5rem;
     }
     
     nav ul {
         flex-direction: column;
-        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
     }
     
     nav a {
-        width: 200px;
-        text-align: center;
+        display: block;
+        padding: 0.75rem;
     }
     
     main {
         margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    .card img {
+        height: 150px;
+    }
+    
+    form {
+        padding: 1rem;
+        margin: 1rem 0.5rem;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+    
+    th, td {
+        padding: 0.5rem;
+    }
+    
+    .welcome-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-section p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
     }
 }
 
-/* الرسوم المتحركة */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-    animation: fadeIn 0.6s ease-out;
-}
-
-/* شريط التمرير */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1a2a6c;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #fdbb2d;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ffa500;
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .trophy-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .card h3 {
+        font-size: 1.1rem;
+    }
 }
