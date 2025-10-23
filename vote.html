@@ -9,20 +9,17 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
-            background-size: cover;
+            background: #1a2a6c;
             color: white;
             line-height: 1.6;
-            min-height: 100vh;
         }
 
         header {
-            background: rgba(0, 0, 0, 0.9);
+            background: #000;
             padding: 1rem 0;
             border-bottom: 3px solid #fdbb2d;
         }
@@ -30,7 +27,7 @@
         header h1 {
             text-align: center;
             color: #fdbb2d;
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
@@ -57,30 +54,15 @@
         }
 
         main {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
 
-        .voting-container {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 2px solid #fdbb2d;
-            margin-bottom: 2rem;
-        }
-
-        .voting-title {
-            text-align: center;
-            color: #fdbb2d;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-
         .players-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
             margin-bottom: 2rem;
         }
 
@@ -88,16 +70,13 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 1.5rem;
             border-radius: 10px;
+            text-align: center;
             border: 2px solid transparent;
             transition: all 0.3s ease;
-            cursor: pointer;
-            text-align: center;
         }
 
         .player-card:hover {
             border-color: #fdbb2d;
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
         }
 
         .player-card.selected {
@@ -106,20 +85,20 @@
         }
 
         .player-image {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             margin: 0 auto 1rem;
-            background: linear-gradient(45deg, #1a2a6c, #b21f1f);
+            background: #b21f1f;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            border: 3px solid #fdbb2d;
+            font-size: 1.5rem;
+            border: 2px solid #fdbb2d;
         }
 
         .player-name {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #fdbb2d;
             margin-bottom: 0.5rem;
@@ -134,18 +113,16 @@
             background: #fdbb2d;
             color: black;
             border: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            font-size: 1rem;
         }
 
         .vote-btn:hover:not(:disabled) {
             background: #ffa500;
-            transform: scale(1.05);
         }
 
         .vote-btn:disabled {
@@ -159,46 +136,8 @@
             color: #ccc;
         }
 
-        .stats-section {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 2px solid #1a2a6c;
-            margin-top: 2rem;
-        }
-
-        .stats-title {
-            text-align: center;
-            color: #fdbb2d;
-            margin-bottom: 1.5rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            color: #fdbb2d;
-            font-weight: bold;
-        }
-
-        .stat-label {
-            color: #ccc;
-            margin-top: 0.5rem;
-        }
-
         footer {
-            background: rgba(0, 0, 0, 0.9);
+            background: #000;
             text-align: center;
             padding: 1.5rem;
             margin-top: 2rem;
@@ -213,10 +152,6 @@
 
             .players-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .voting-title {
-                font-size: 1.5rem;
             }
         }
     </style>
@@ -239,53 +174,27 @@
     </header>
 
     <main>
-        <div class="voting-container">
-            <h2 class="voting-title">صوت لأفضل لاعب في الفريق ككل</h2>
-            
-            <div class="players-grid" id="playersGrid">
-                <!-- اللاعبين سيتم إضافتهم بالجافاسكريبت -->
-            </div>
-
-            <div class="stats-section">
-                <h3 class="stats-title">إحصائيات التصويت</h3>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number" id="totalVotes">0</div>
-                        <div class="stat-label">إجمالي الأصوات</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="leadingPlayer">-</div>
-                        <div class="stat-label">اللاعب المتصدر</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="topVotes">0</div>
-                        <div class="stat-label">أعلى تصويت</div>
-                    </div>
-                </div>
-            </div>
+        <div class="players-grid" id="playersGrid">
+            <!-- اللاعبين يظهرون هنا -->
         </div>
     </main>
 
     <footer>
-        <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
+        <p>© 2025 موقع ريال مدريد</p>
     </footer>
 
     <script>
-        // بيانات اللاعبين
         const players = [
             { id: 1, name: "جود بيلينغهام", position: "وسط", votes: 0 },
             { id: 2, name: "فينيسيوس جونيور", position: "مهاجم", votes: 0 },
             { id: 3, name: "لوكا مودريتش", position: "وسط", votes: 0 },
-            { id: 4, name: "توني كروس", position: "وسط", votes: 0 },
-            { id: 5, name: "رودريغو", position: "مهاجم", votes: 0 },
-            { id: 6, name: "فيدريكو فالفيردي", position: "وسط", votes: 0 },
-            { id: 7, name: "أنطونيو روديغر", position: "دفاع", votes: 0 },
-            { id: 8, name: "تيبو كورتوا", position: "حارس مرمى", votes: 0 }
+            { id: 4, name: "رودريغو", position: "مهاجم", votes: 0 },
+            { id: 5, name: "فيدريكو فالفيردي", position: "وسط", votes: 0 },
+            { id: 6, name: "أنطونيو روديغر", position: "دفاع", votes: 0 }
         ];
 
         let selectedPlayer = null;
 
-        // عرض اللاعبين
         function renderPlayers() {
             const playersGrid = document.getElementById('playersGrid');
             playersGrid.innerHTML = '';
@@ -305,11 +214,8 @@
                 `;
                 playersGrid.appendChild(playerCard);
             });
-
-            updateStats();
         }
 
-        // التصويت للاعب
         function voteForPlayer(playerId) {
             if (selectedPlayer) return;
             
@@ -317,30 +223,16 @@
             const player = players.find(p => p.id === playerId);
             player.votes++;
             
-            // حفظ في localStorage
-            localStorage.setItem('madridBestPlayerVotes', JSON.stringify(players));
-            localStorage.setItem('madridLastVote', playerId);
-            localStorage.setItem('madridLastVoteTime', new Date().toISOString());
+            localStorage.setItem('madridVotes', JSON.stringify(players));
+            localStorage.setItem('lastVote', playerId);
             
             renderPlayers();
-            alert(`🎉 شكراً لك! لقد صوتت لـ ${player.name}\nHala Madrid!`);
+            alert(`شكراً لك! صوتت لـ ${player.name}`);
         }
 
-        // تحديث الإحصائيات
-        function updateStats() {
-            const totalVotes = players.reduce((sum, player) => sum + player.votes, 0);
-            const leadingPlayer = players.reduce((leading, player) => 
-                player.votes > leading.votes ? player : leading, players[0]);
-            
-            document.getElementById('totalVotes').textContent = totalVotes;
-            document.getElementById('leadingPlayer').textContent = leadingPlayer.name;
-            document.getElementById('topVotes').textContent = leadingPlayer.votes;
-        }
-
-        // تحميل الأصوات المحفوظة
         function loadSavedVotes() {
-            const savedVotes = localStorage.getItem('madridBestPlayerVotes');
-            const lastVote = localStorage.getItem('madridLastVote');
+            const savedVotes = localStorage.getItem('madridVotes');
+            const lastVote = localStorage.getItem('lastVote');
             
             if (savedVotes) {
                 const savedPlayers = JSON.parse(savedVotes);
@@ -356,7 +248,6 @@
             }
         }
 
-        // التهيئة عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function() {
             loadSavedVotes();
             renderPlayers();
