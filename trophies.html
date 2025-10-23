@@ -1,185 +1,69 @@
+[file name]: trophies.html
+[file content begin]
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>البطولات - ريال مدريد</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #1a2a6c;
-            color: white;
-        }
-
-        header {
-            background: #000;
-            padding: 1rem 0;
-            border-bottom: 3px solid #fdbb2d;
-        }
-
-        header h1 {
-            text-align: center;
-            color: #fdbb2d;
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #fdbb2d;
-            color: black;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .trophies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .trophy-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px solid #fdbb2d;
-        }
-
-        .trophy-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .trophy-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #fdbb2d;
-            margin-bottom: 0.5rem;
-        }
-
-        .trophy-count {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 0.5rem;
-        }
-
-        .trophy-desc {
-            color: #ccc;
-            font-size: 0.9rem;
-        }
-
-        .champions-league {
-            background: linear-gradient(45deg, #0047AB, #FFD700);
-        }
-
-        .la-liga {
-            background: linear-gradient(45deg, #FF0000, #FFD700);
-        }
-
-        .copa-del-rey {
-            background: linear-gradient(45deg, #FF0000, #FFFFFF);
-        }
-
-        .club-world-cup {
-            background: linear-gradient(45deg, #000000, #00A859);
-        }
-
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-    </style>
+    <title>ريال مدريد - البطولات</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>بطولات النادي 🏆</h1>
+        <h1>البطولات</h1>
         <nav>
             <ul>
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="players.html">اللاعبين</a></li>
                 <li><a href="matches.html">المباريات</a></li>
+                <li><a href="trophies.html">البطولات</a></li>
                 <li><a href="legends.html">الأساطير</a></li>
-                <li><a href="vote.html">التصويت</a></li>
+                <li><a href="register.html">تسجيل عضو جديد</a></li>
+                <li><a href="vote.html">التصويت للاعبين</a></li>
+                <li><a href="results.html">نتائج التصويت</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="trophies-grid">
-            <div class="trophy-card champions-league">
-                <div class="trophy-icon">🏆</div>
-                <div class="trophy-count">14</div>
-                <div class="trophy-name">دوري أبطال أوروبا</div>
-                <div class="trophy-desc">رقم قياسي عالمي</div>
+        <h2>قائمة البطولات</h2>
+        
+        <div class="trophy-list">
+            <div class="trophy-item">
+                <h3>دوري أبطال أوروبا</h3>
+                <p>15 مرة (آخر مرة: 2024)</p>
             </div>
-
-            <div class="trophy-card la-liga">
-                <div class="trophy-icon">🥇</div>
-                <div class="trophy-count">35</div>
-                <div class="trophy-name">الدوري الإسباني</div>
-                <div class="trophy-desc">رقم قياسي في إسبانيا</div>
+            
+            <div class="trophy-item">
+                <h3>الدوري الإسباني</h3>
+                <p>36 مرة (آخر مرة: 2024)</p>
             </div>
-
-            <div class="trophy-card copa-del-rey">
-                <div class="trophy-icon">🏅</div>
-                <div class="trophy-count">19</div>
-                <div class="trophy-name">كأس الملك</div>
-                <div class="trophy-desc">بطولة الكأس المحلية</div>
+            
+            <div class="trophy-item">
+                <h3>كأس الملك</h3>
+                <p>20 مرة (آخر مرة: 2023)</p>
             </div>
-
-            <div class="trophy-card club-world-cup">
-                <div class="trophy-icon">🌍</div>
-                <div class="trophy-count">5</div>
-                <div class="trophy-name">كأس العالم للأندية</div>
-                <div class="trophy-desc">بطل العالم</div>
+            
+            <div class="trophy-item">
+                <h3>كأس السوبر الإسباني</h3>
+                <p>13 مرة (آخر مرة: 2024)</p>
             </div>
-
-            <div class="trophy-card">
-                <div class="trophy-icon">🛡️</div>
-                <div class="trophy-count">12</div>
-                <div class="trophy-name">كأس السوبر الأوروبي</div>
-                <div class="trophy-desc">بطولة أوروبية</div>
+            
+            <div class="trophy-item">
+                <h3>كأس العالم للأندية</h3>
+                <p>5 مرات (آخر مرة: 2023)</p>
             </div>
-
-            <div class="trophy-card">
-                <div class="trophy-icon">⚔️</div>
-                <div class="trophy-count">2</div>
-                <div class="trophy-name">كأس الاتحاد الأوروبي</div>
-                <div class="trophy-desc">بطولة أوروبية سابقة</div>
+            
+            <div class="trophy-item">
+                <h3>كأس السوبر الأوروبي</h3>
+                <p>5 مرات (آخر مرة: 2022)</p>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>© 2025 موقع ريال مدريد - النادي الأكثر تتويجاً في العالم</p>
+        <p>© 2025 موقع ريال مدريد - تصميم هناء زهلول</p>
     </footer>
 </body>
 </html>
+[file content end]
