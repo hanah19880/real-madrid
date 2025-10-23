@@ -51,6 +51,7 @@
         .nav-links {
             display: flex;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         .nav-links li {
@@ -73,71 +74,26 @@
             color: #fdbb2d;
         }
 
-        /* هامبورغر مينو */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* التصميم للموبايل */
+        /* تحسينات للشاشات الصغيرة */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 80%;
-                height: calc(100vh - 70px);
-                background: rgba(0, 0, 0, 0.95);
+            .nav-container {
                 flex-direction: column;
-                transition: 0.3s;
-                padding-top: 20px;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+                height: auto;
+                padding: 15px 0;
             }
-
-            .nav-links.active {
-                right: 0;
+            
+            .nav-links {
+                justify-content: center;
+                margin-top: 10px;
             }
-
-            .nav-links li {
-                width: 100%;
-            }
-
+            
             .nav-links a {
-                height: 60px;
-                padding: 0 25px;
-                justify-content: flex-start;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            /* تحريك الخطوط في الهامبرغر */
-            .menu-toggle.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .menu-toggle.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
+                height: 50px;
+                padding: 0 10px;
+                font-size: 14px;
             }
         }
 
-        /* الباقي نفسو */
         .hero {
             text-align: center;
             padding: 100px 20px;
@@ -247,14 +203,7 @@
                 <div class="logo-text">ريال مدريد</div>
             </div>
             
-            <!-- هامبرغر أيقونة -->
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <ul class="nav-links" id="nav-links">
+            <ul class="nav-links">
                 <li><a href="#">الرئيسية</a></li>
                 <li><a href="#">اللاعبين</a></li>
                 <li><a href="#">المباريات</a></li>
@@ -279,25 +228,5 @@
             </div>
         </div>
     </section>
-
-    <script>
-        // JavaScript للتحكم في القائمة المنسدلة
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileMenu.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // إغلاق القائمة عند الضغط على رابط
-        const navItems = document.querySelectorAll('.nav-links a');
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>
